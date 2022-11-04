@@ -1,8 +1,7 @@
-from django.urls import path
-from .views import Home,Add_Student,Delete_Student,EditStudent
+from django.contrib import admin
+from django.urls import path,include
+
 urlpatterns = [
-    path('',Home.as_view(), name='home'),
-    path('add-student/',Add_Student.as_view(), name='add-student'),
-    path('delete_student/', Delete_Student.as_view(), name='delete-student'),
-    path('edit-student/<int:id>/', EditStudent.as_view(), name='edit-student')
+    path('admin/', admin.site.urls),
+    path('', include('core.urls'))
 ]
